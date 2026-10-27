@@ -1,0 +1,6 @@
+{
+  "name": "RX OWNER - Trading Script & Suite",
+  "description": "RX OWNER browser console trading script suite with custom neon blue styling, default password unlock, and download portal.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
