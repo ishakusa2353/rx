@@ -18,13 +18,15 @@ import {
   Info
 } from 'lucide-react';
 
+import { ISHAK_SCRIPT_CODE } from './rawCode.ts';
+
 const LOGO_IMG = "/rx-bot-logo-sq.jpg";
 const BANNER_IMG = "/rx-bot-logo.jpg";
 const DEFAULT_PW = "sakilvai";
 const TELEGRAM_CONTACT = "telegram:@SA_T_OWNER";
 
 export default function App() {
-  const [scriptCode, setScriptCode] = useState<string>('');
+  const [scriptCode, setScriptCode] = useState<string>(ISHAK_SCRIPT_CODE);
   const [copied, setCopied] = useState(false);
   const [activeTab, setActiveTab] = useState<'preview' | 'code' | 'guide'>('preview');
 
@@ -43,9 +45,14 @@ export default function App() {
   const [simTapCount, setSimTapCount] = useState(0);
 
   useEffect(() => {
-    fetch('/ishak.js')
+    // Also fetch with cache busting timestamp to ensure always updated
+    fetch(`/ishak.js?t=${Date.now()}`, { cache: 'no-store' })
       .then(r => r.text())
-      .then(code => setScriptCode(code))
+      .then(code => {
+        if (code && code.trim().length > 0) {
+          setScriptCode(code);
+        }
+      })
       .catch(() => {});
     
     addSimLog("RX BOT Console Simulator initialized.");
