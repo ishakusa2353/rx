@@ -1,6 +1,6 @@
 {
-  "name": "RX OWNER - Trading Script & Suite",
-  "description": "RX OWNER browser console trading script suite with custom neon blue styling, default password unlock, and download portal.",
+  "name": "RX BOT - Trading Script & Suite",
+  "description": "RX BOT browser console trading script suite with signature orange-cyan neon theme, default password sakilvai, and interactive simulator.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
